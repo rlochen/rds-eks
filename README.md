@@ -1,2 +1,1 @@
-# rds-eks
-rds-eks
+# rds-eks Terraform stack
