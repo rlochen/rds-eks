@@ -1,1 +1,0 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"iam","Source":"./modules/iam","Dir":"modules/iam"},{"Key":"network","Source":"./modules/network","Dir":"modules/network"},{"Key":"rds","Source":"./modules/rds","Dir":"modules/rds"}]}
