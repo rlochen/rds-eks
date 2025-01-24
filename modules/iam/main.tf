@@ -40,18 +40,3 @@ resource "aws_iam_role" "application_iam_role" {
   tags = var.tags
 }
 
-resource "aws_iam_policy" "allow_rds_connect" {
-  name        = "AllowRDSConnectPolicy"
-  description = "Policy to allow RDS connection"
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect   = "Allow"
-        Action   = "rds-db:connect"
-        Resource = var.rds_db_arn
-      }
-    ]
-  })
-}
