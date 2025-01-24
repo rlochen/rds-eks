@@ -111,7 +111,6 @@ resource "aws_iam_role_policy_attachment" "rds_policy_attachment" {
 resource "aws_db_instance" "rds_instance" {
   allocated_storage     = var.rds_allocated_storage   # Storage size (GB)
   storage_type          = var.rds_storage_type        # E.g., "gp3" for general purpose SSD
-  db_instance_class     = var.rds_instance_class      # Instance type, e.g., "db.m5.large"
   db_subnet_group_name  = aws_db_subnet_group.rds_subnet_group.name
   vpc_security_group_ids = [aws_security_group.rds_security_group.id]
   engine                = var.rds_engine              # E.g., "postgres"
