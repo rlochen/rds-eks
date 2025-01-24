@@ -1,4 +1,6 @@
 # RDS terraform stack
+This repo is used to create Network RDS and IAM resources.
+
 Run below commands to 
 
 # Initialize Terraform:
