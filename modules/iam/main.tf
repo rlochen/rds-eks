@@ -2,7 +2,6 @@
 # Create an IAM Policy for RDS access
 resource "aws_iam_policy" "allow_rds_connect" {
   name = "AllowRDSConnectPolicy"
-  role = aws_iam_role.application_iam_role.name
 
   policy = jsonencode({
     Version = "2012-10-17"
