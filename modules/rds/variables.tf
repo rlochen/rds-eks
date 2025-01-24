@@ -93,3 +93,13 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "application_iam_role_name" {
+  description = "The name of the IAM role for the application"
+  type        = string
+}
+
+variable "rds_policy_arn" {
+  description = "The ARN of the IAM policy allowing RDS access"
+  type        = string
+}

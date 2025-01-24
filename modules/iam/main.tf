@@ -1,6 +1,6 @@
 # IAM policy configuration
 # Create an IAM Policy for RDS access
-resource "aws_iam_role_policy" "allow_rds_connect" {
+resource "aws_iam_policy" "allow_rds_connect" {
   name = "AllowRDSConnectPolicy"
   role = aws_iam_role.application_iam_role.name
 
@@ -17,7 +17,7 @@ resource "aws_iam_role_policy" "allow_rds_connect" {
 }
 
 # Attach the policy to the application role
-resource "aws_iam_role_policy_attachment" "attach_rds_policy" {
+resource "aws_iam_policy_attachment" "attach_rds_policy" {
   role       = var.application_iam_role
   policy_arn = aws_iam_policy.allow_rds_connect.arn
 }

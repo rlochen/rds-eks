@@ -31,7 +31,9 @@ module "iam" {
 
 # RDS Module: Create the RDS instance and related resources
 module "rds" {
-  source                = "./modules/rds"
+  source                 = "./modules/rds"
+  application_iam_role_name = module.iam.iam_role_name
+  rds_policy_arn            = module.iam.iam_policy_arn
   rds_vpc_id           = module.network.vpc_id  #Pass VPC ID
   rds_subnet_ids  = module.network.subnet_ids  # Pass Subnet IDs
   eks_vpc_cidr         = var.eks_vpc_cidr
@@ -39,7 +41,6 @@ module "rds" {
   rds_master_username  = var.rds_master_username # Pass the master username
   rds_master_password  = var.rds_master_password # Pass the master password
   rds_db_name          = var.rds_db_name
-  application_iam_role  = module.iam.iam_role_arn
   tags = {
     Environment = "production"
     Project     = "example-app"
