@@ -103,8 +103,8 @@ resource "aws_iam_policy" "rds_iam_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "rds_policy_attachment" {
-  role       = aws_iam_role.rds_iam_role.name
-  policy_arn = aws_iam_policy.rds_iam_policy.arn
+  role       = aws_iam_role.application_iam_role.name
+  policy_arn = aws_iam_policy.allow_rds_connect.arn
 }
 
 # RDS Instance
