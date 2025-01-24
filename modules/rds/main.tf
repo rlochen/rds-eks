@@ -112,6 +112,7 @@ resource "aws_db_instance" "rds_instance" {
   allocated_storage     = var.rds_allocated_storage   # Storage size (GB)
   storage_type          = var.rds_storage_type        # E.g., "gp3" for general purpose SSD
   db_subnet_group_name  = aws_db_subnet_group.rds_subnet_group.name
+  instance_class        = var.rds_instance_class
   vpc_security_group_ids = [aws_security_group.rds_security_group.id]
   engine                = var.rds_engine              # E.g., "postgres"
   engine_version        = var.rds_engine_version      # E.g., "13.3"
