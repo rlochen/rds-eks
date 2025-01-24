@@ -116,7 +116,6 @@ resource "aws_db_instance" "rds_instance" {
   vpc_security_group_ids = [aws_security_group.rds_security_group.id]
   engine                = var.rds_engine              # E.g., "postgres"
   engine_version        = var.rds_engine_version      # E.g., "13.3"
-  name                  = var.rds_db_name             # Database name
   username              = var.rds_master_username     # Master username
   password              = var.rds_master_password     # Master password
   parameter_group_name  = aws_db_parameter_group.rds_custom_param_group.name
