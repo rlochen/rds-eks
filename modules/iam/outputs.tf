@@ -2,7 +2,7 @@
 # Output the IAM Role ARN
 output "iam_role_arn" {
   description = "The ARN of the IAM role assigned to the application"
-  value       = var.application_iam_role
+  value       = aws_iam_role.application_iam_role.arn
 }
 
 output "iam_role_name" {

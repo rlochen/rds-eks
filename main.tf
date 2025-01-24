@@ -33,6 +33,7 @@ module "iam" {
 module "rds" {
   source                 = "./modules/rds"
   application_iam_role_name = module.iam.iam_role_name
+  application_iam_role  = module.iam.iam_role_arn  # Reference the IAM role ARN from the iam module output
   rds_policy_arn            = module.iam.iam_policy_arn
   rds_vpc_id           = module.network.vpc_id  #Pass VPC ID
   rds_subnet_ids  = module.network.subnet_ids  # Pass Subnet IDs

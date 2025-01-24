@@ -126,9 +126,6 @@ resource "aws_db_instance" "rds_instance" {
   tags = {
     Name = "rds-instance"
   }
-
-  # Allow cross-region replication, if needed (optional)
-  # replication_source_identifier = "arn:aws:rds:..."
 }
 
 # RDS Endpoint Output (for connection purposes)

@@ -3,7 +3,7 @@ provider "aws" {
   region     = "ap-southeast-2"
 }
 
-# Terraform Backend (Optional, if using remote backend like S3)
+# Terraform Backend ( Using remote backend like S3)
 terraform {
   required_providers {
     aws = {
